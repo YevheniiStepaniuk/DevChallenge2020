@@ -1,10 +1,10 @@
-How to run:
+## How to run:
     docker-compose up
-How to run tests:
+## How to run tests:
     docker-compose -f ./docker-compose.test.yml up
-How to change similarity percent for articles (default 95)
-    - look into UniqueArticles__SimilarityPercent env variable in the docker-compose file
+## How to change similarity percent for articles (default 95)
+   look into **UniqueArticles__SimilarityPercent** env variable in the __docker-compose.yml__ file
 
-Swagger URL: 
-- localhost:5000/swagger
+## Swagger URL: 
+ http://localhost:5000/swagger
 
