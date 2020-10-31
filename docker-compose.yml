@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mssql:
+    image: microsoft/mssql-server-linux:latest
+    container_name: mssql
+    ports: 
+       - "1433:1433"
+    environment:
+      MSSQL_PID: Express
+      ACCEPT_EULA: Y
+      SA_PASSWORD: myStrongPassword1
+    restart: unless-stopped
+  app:
+    build: .  
+    ports: 
+      - "5000:5000"
+    environment: 
+      - Database__ConnectionString=Server=mssql,1433;User=sa;Password=myStrongPassword1;Database=UniqueArticle
+      - UniqueArticles__SimilarityPercent=95
+  
